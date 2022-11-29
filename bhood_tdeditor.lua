@@ -21,7 +21,7 @@ function se.onShowTextDraw(id, data)
 	end
 
 	if id == 2125 then -- speedometru text
-		data.position.x = data.position.x + 65
+		data.position.x = data.position.x + 60
 		data.position.y = data.position.y - 20
 		data.letterHeight = data.letterHeight / 1.25
 		data.letterWidth = data.letterWidth / 1.40
