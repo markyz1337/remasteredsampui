@@ -31,10 +31,11 @@ function se.onShowTextDraw(id, data)
 	end
 	
 	if id == 2084 then -- speedometru text
-		data.position.x = data.position.x - 0
-		data.position.y = data.position.y - 5
-		data.letterHeight = data.letterHeight / 1.19
-		data.letterWidth = data.letterWidth / 1.19
+		data.position.x = data.position.x - 1
+		data.position.y = data.position.y - 4
+		data.letterHeight = data.letterHeight / 1.22
+		data.letterWidth = data.letterWidth * 1.15
+		data.style = 3
 	end
 	
 	if id == 2080 then -- find player text
