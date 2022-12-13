@@ -31,10 +31,10 @@ function se.onShowTextDraw(id, data)
 	end
 	
 	if id == 2084 then -- speedometru text
-		data.position.x = data.position.x - 60
-		data.position.y = data.position.y - 2
-		data.letterHeight = data.letterHeight / 2
-		data.letterWidth = data.letterWidth / 1.45
+		data.position.x = data.position.x - 1
+		data.position.y = data.position.y - 4
+		data.letterHeight = data.letterHeight / 1.22
+		data.letterWidth = data.letterWidth * 1.15
 		data.style = 3
 	end
 	
