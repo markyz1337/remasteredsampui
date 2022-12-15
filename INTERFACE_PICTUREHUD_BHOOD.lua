@@ -67,7 +67,7 @@ function main()
                 imgui.ShowCursor = true
                 edit = false
                 menu = true
-                sampAddChatMessage("Положение сохранено.", -1)
+                sampAddChatMessage("ГЏГ®Г«Г®Г¦ГҐГ­ГЁГҐ Г±Г®ГµГ°Г Г­ГҐГ­Г®.", -1)
                 savejson(ini_png,'moonloader/config/picturehud/bhood/picturehud.json')
             end
     end
@@ -85,10 +85,10 @@ function main()
                     end
                     if menu then
                         if ini_png[k][i].player then
-                            renderFontDrawText(font,"{FF0000}Приклеплён к персонажу\n{FFFFFF}"..k.." № "..i,(x_e + ini_png[k][i].player_posx) + (ini_png[k][i].x / 2), (y_e + ini_png[k][i].player_posy) + (ini_png[k][i].y / 2), "0xFFFFFFFF")
+                            renderFontDrawText(font,"{FF0000}ГЏГ°ГЁГЄГ«ГҐГЇГ«ВёГ­ ГЄ ГЇГҐГ°Г±Г®Г­Г Г¦Гі\n{FFFFFF}"..k.." В№ "..i,(x_e + ini_png[k][i].player_posx) + (ini_png[k][i].x / 2), (y_e + ini_png[k][i].player_posy) + (ini_png[k][i].y / 2), "0xFFFFFFFF")
                             renderDrawBoxWithBorder(x_e + ini_png[k][i].player_posx, y_e + ini_png[k][i].player_posy, ini_png[k][i].x, ini_png[k][i].y, "0x00FFFFFF", 1, "0xFFFFFFFF")
                         else
-                            renderFontDrawText(font,k.." № "..i,ini_png[k][i].posx + (ini_png[k][i].x / 2), ini_png[k][i].posy + (ini_png[k][i].y / 2), "0xFFFFFFFF", true)
+                            renderFontDrawText(font,k.." В№ "..i,ini_png[k][i].posx + (ini_png[k][i].x / 2), ini_png[k][i].posy + (ini_png[k][i].y / 2), "0xFFFFFFFF", true)
                             renderDrawBoxWithBorder(ini_png[k][i].posx, ini_png[k][i].posy, ini_png[k][i].x, ini_png[k][i].y, "0x00FFFFFF", 1, "0xFFFFFFFF")
                         end
                     end
@@ -126,7 +126,7 @@ function imgui.OnDrawFrame()
         imgui.SameLine()
         imgui.BeginChild("##pichu", imgui.ImVec2(500, 299),false)
         imgui.SetWindowFontScale(1.1)
-        imgui.Text(u8'Картинка '..tostring(select))
+        imgui.Text(u8'ГЉГ Г°ГІГЁГ­ГЄГ  '..tostring(select))
         imgui.SetWindowFontScale(1.0)
         if imgui.SliderInt(u8'##slider', slider, 1, #ini_png[select]) then
             check.v = ini_png[select][slider.v].enable
@@ -138,9 +138,9 @@ function imgui.OnDrawFrame()
             color = imgui.ImFloat4(imgui.ImColor(ini_png[select][slider.v].color):GetFloat4())
         end
         imgui.SameLine()
-        imgui.Text(u8"ID картинки")
+        imgui.Text(u8"ID ГЄГ Г°ГІГЁГ­ГЄГЁ")
         imgui.SameLine()
-            if imgui.Button(u8"Добавить") then
+            if imgui.Button(u8"Г„Г®ГЎГ ГўГЁГІГј") then
                 table.insert(ini_png[select],{posx = 0,posy = 0,player = false,player_posx = 0,player_posy = 0, rotation = 0, enable = false, color = 4294967295,x = 0,y = 0})
                 savejson(ini_png,'moonloader/config/picturehud/bhood/picturehud.json')
             end
@@ -149,18 +149,18 @@ function imgui.OnDrawFrame()
             savejson(ini_png,'moonloader/config/picturehud/bhood/picturehud.json')
         end
         imgui.SameLine()
-        imgui.Text((check.v and u8"Выключить" or u8"Включить")..u8" рендер картинки")
+        imgui.Text((check.v and u8"Г‚Г»ГЄГ«ГѕГ·ГЁГІГј" or u8"Г‚ГЄГ«ГѕГ·ГЁГІГј")..u8" Г°ГҐГ­Г¤ГҐГ° ГЄГ Г°ГІГЁГ­ГЄГЁ")
         if check.v then
         if imgui.Checkbox(u8"##check_player", check_player) then
             ini_png[select][slider.v].player = check_player.v
             savejson(ini_png,'moonloader/config/picturehud/bhood/picturehud.json')
         end
         imgui.SameLine()
-        imgui.Text((check_player.v and u8"Открепить" or u8"Прикрепить")..u8" картинку "..(check_player.v and u8"от персонажа" or u8"к персонажу"))
+        imgui.Text((check_player.v and u8"ГЋГІГЄГ°ГҐГЇГЁГІГј" or u8"ГЏГ°ГЁГЄГ°ГҐГЇГЁГІГј")..u8" ГЄГ Г°ГІГЁГ­ГЄГі "..(check_player.v and u8"Г®ГІ ГЇГҐГ°Г±Г®Г­Г Г¦Г " or u8"ГЄ ГЇГҐГ°Г±Г®Г­Г Г¦Гі"))
         if not check_player.v then
-            if imgui.Button(u8"Изменить положение картинки") then
+            if imgui.Button(u8"Г€Г§Г¬ГҐГ­ГЁГІГј ГЇГ®Г«Г®Г¦ГҐГ­ГЁГҐ ГЄГ Г°ГІГЁГ­ГЄГЁ") then
                 menu = false
-                sampAddChatMessage("Для сохранения положения нажмите {ff6666}ЛКМ{ffffff}.", -1)  
+                sampAddChatMessage("Г„Г«Гї Г±Г®ГµГ°Г Г­ГҐГ­ГЁГї ГЇГ®Г«Г®Г¦ГҐГ­ГЁГї Г­Г Г¦Г¬ГЁГІГҐ {ff6666}Г‹ГЉГЊ{ffffff}.", -1)  
                 imgui.ShowCursor = false    
                 lua_thread.create(function() wait(10) edit = true showCursor(true, true) end)
             end
@@ -170,41 +170,41 @@ function imgui.OnDrawFrame()
                 savejson(ini_png,'moonloader/config/picturehud/bhood/picturehud.json')
             end
             imgui.SameLine()
-            imgui.Text(u8"X отн. персонажа")
+            imgui.Text(u8"X Г®ГІГ­. ГЇГҐГ°Г±Г®Г­Г Г¦Г ")
             if imgui.SliderInt(u8'##slider_posy_player', slider_posy_player, -y, y) then
                 ini_png[select][slider.v].player_posy = slider_posy_player.v
                 savejson(ini_png,'moonloader/config/picturehud/bhood/picturehud.json')
             end
             imgui.SameLine()
-            imgui.Text(u8"Y отн. персонажа")
+            imgui.Text(u8"Y Г®ГІГ­. ГЇГҐГ°Г±Г®Г­Г Г¦Г ")
         end
         if imgui.SliderInt(u8'##slider_rotation', slider_rotation, 0, 360) then
             ini_png[select][slider.v].rotation = slider_rotation.v
             savejson(ini_png,'moonloader/config/picturehud/bhood/picturehud.json')
         end
         imgui.SameLine()
-        imgui.Text(u8"Угол поворота картинки")
+        imgui.Text(u8"Г“ГЈГ®Г« ГЇГ®ГўГ®Г°Г®ГІГ  ГЄГ Г°ГІГЁГ­ГЄГЁ")
         if imgui.SliderInt(u8'##slider_floatx', slider_floatx, 0, 5000) then
             ini_png[select][slider.v].x = slider_floatx.v
             savejson(ini_png,'moonloader/config/picturehud/bhood/picturehud.json')
         end
         imgui.SameLine()
-        imgui.Text(u8"Ширина картинки")
+        imgui.Text(u8"ГГЁГ°ГЁГ­Г  ГЄГ Г°ГІГЁГ­ГЄГЁ")
         if imgui.SliderInt(u8'##slider_floaty', slider_floaty, 0, 5000) then
             ini_png[select][slider.v].y = slider_floaty.v
             savejson(ini_png,'moonloader/config/picturehud/bhood/picturehud.json')
         end
         imgui.SameLine()
-        imgui.Text(u8"Длина картинки")
+        imgui.Text(u8"Г„Г«ГЁГ­Г  ГЄГ Г°ГІГЁГ­ГЄГЁ")
         if imgui.ColorEdit4("##imgColor", color, imgui.ColorEditFlags.AlphaBar) then
             ini_png[select][slider.v].color = imgui.ImColor.FromFloat4(color.v[1], color.v[2], color.v[3], color.v[4]):GetU32()
             print(imgui.ImColor.FromFloat4(color.v[1], color.v[2], color.v[3], color.v[4]):GetU32())
             savejson(ini_png,'moonloader/config/picturehud/bhood/picturehud.json')
         end
         local x_r, y_r = renderGetTextureSize(png[select])
-        imgui.Text(u8"Рекомендуемая для этой картинки: Ширина - "..x_r..u8", Длина - "..y_r)
+        imgui.Text(u8"ГђГҐГЄГ®Г¬ГҐГ­Г¤ГіГҐГ¬Г Гї Г¤Г«Гї ГЅГІГ®Г© ГЄГ Г°ГІГЁГ­ГЄГЁ: ГГЁГ°ГЁГ­Г  - "..x_r..u8", Г„Г«ГЁГ­Г  - "..y_r)
         imgui.SameLine()
-        if imgui.Button(u8"Установить") then
+        if imgui.Button(u8"Г“Г±ГІГ Г­Г®ГўГЁГІГј") then
             ini_png[select][slider.v].x = x_r
             ini_png[select][slider.v].y = y_r
             slider_floaty.v = y_r
@@ -212,7 +212,7 @@ function imgui.OnDrawFrame()
             savejson(ini_png,'moonloader/config/picturehud/bhood/picturehud.json')
         end
         else
-        imgui.Text(u8"Для изменения параметров, включите рендер картинки")
+        imgui.Text(u8"Г„Г«Гї ГЁГ§Г¬ГҐГ­ГҐГ­ГЁГї ГЇГ Г°Г Г¬ГҐГІГ°Г®Гў, ГўГЄГ«ГѕГ·ГЁГІГҐ Г°ГҐГ­Г¤ГҐГ° ГЄГ Г°ГІГЁГ­ГЄГЁ")
         end
         imgui.EndChild()
     
