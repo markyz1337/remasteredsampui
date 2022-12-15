@@ -1,12 +1,12 @@
 local sampev = require 'lib.samp.events'
 local sound_state = require "moonloader".audiostream_state
 local active = true
-
+ 
 function main()
     while not isSampAvailable() do wait(0) end
     if not doesFileExist('moonloader/resource/audio/onGivePlayerMoney.mp3') then
-        sampAddChatMessage('{ab0062}[onGivePlayerMoney notification]: {ffffff}«вуковой файл: "moonloader/resource/audio/onGivePlayerMoney.mp3" не найден, выгружаюсь...', -1)
-        print('{ffffff}«вуковой файл: "moonloader/resource/audio/onGivePlayerMoney.mp3" не найден, выгружаюсь...')
+        sampAddChatMessage('{ab0062}[onGivePlayerMoney notification]: {ffffff}????: "moonloader/resource/audio/onGivePlayerMoney.mp3" ???, ?????.', -1)
+        print('{ffffff}????: "moonloader/resource/audio/onGivePlayerMoney.mp3" ???, ?????.')
         thisScript():unload()
     end
     AudioStream = loadAudioStream('moonloader/resource/audio/GameSounds/sentmessage.mp3')
@@ -23,10 +23,10 @@ function main()
         end
     end
 end
-
-
+ 
+ 
 function sampev.onSendCommand(text)
-   if text:match('^/sms (.+)') or text:match('^/re(b?) (.+)') or text:match('^/pm(b?) (.+)') then
+   if text:match('^/sms (.+)') or text:match('^/re(b?) (.+)') or text:match('^/t(b?) (.+)') then
    setAudioStreamState(AudioStream, sound_state.PLAY)
    end
    if text:match('/getgift') then
@@ -35,8 +35,11 @@ function sampev.onSendCommand(text)
    if text:match('/service taxi') then
    setAudioStreamState(AudioStream6, sound_state.PLAY)
    end
+if text:match('/p') then
+   setAudioStreamState(AudioStream4, sound_state.PLAY)
+   end
 end
-
+ 
 function sampev.onServerMessage(color, text)
    if text:match('is calling you') then
    setAudioStreamState(AudioStream1, sound_state.PLAY)
@@ -50,10 +53,10 @@ function sampev.onServerMessage(color, text)
    if text:match('stops the engine') then
    setAudioStreamState(AudioStream3, sound_state.STOP)
    end
-   if text:match('You have transfered') or text:match('You have received') or text:match('You received') or text:match('ve paid') or text:match('You earned') then
+   if text:match('Ai transferat') or text:match('Ai primit') or text:match('I-ai trimis') or text:match('ve paid') or text:match('Castig de baza:') then
    setAudioStreamState(AudioStream4, sound_state.PLAY)
    end
-   if text:match('Your call has been terminated by the other party.') or text:match('You hung up.') or text:match('You have answered your phone.') then
+   if text:match('a inchis.') or text:match('Ai inchis.') or text:match('Ai raspuns la telefon.') then
    setAudioStreamState(AudioStream1, sound_state.STOP)
    end
 end
