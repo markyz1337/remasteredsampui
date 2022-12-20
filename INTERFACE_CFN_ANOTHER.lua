@@ -278,9 +278,6 @@ function main()
     end
     list = jsonRead()
 
-    sampAddChatMessage("[GameEditor]: {FFFFFF}Скрипт загружен! Для активации введите: {34E897}/ge", 0xE84434)
-    sampAddChatMessage("[GameEditor]: {FFFFFF}Отдельное спасибо: {34E897}chapo", 0xE84434)
-
     sampRegisterChatCommand("ge", menu.switch)
 
     memory.setint32(0xBAB230, cfg.config.MONEY, true)
