@@ -152,7 +152,7 @@ local ui_meta = {
         if v == "switch" then
             local switch = function()
                 if self.process and self.process:status() ~= "dead" then
-                    return false -- // Предыдущая анимация ещё не завершилась!
+                    return false -- // РџСЂРµРґС‹РґСѓС‰Р°СЏ Р°РЅРёРјР°С†РёСЏ РµС‰С‘ РЅРµ Р·Р°РІРµСЂС€РёР»Р°СЃСЊ!
                 end
                 self.timer = os.clock()
                 self.state = not self.state
@@ -173,7 +173,7 @@ local ui_meta = {
                         if a == 1.00 then break end
                     end
                 end)
-                return true -- // Состояние окна изменено!
+                return true -- // РЎРѕСЃС‚РѕСЏРЅРёРµ РѕРєРЅР° РёР·РјРµРЅРµРЅРѕ!
             end
             return switch
         end
@@ -195,7 +195,7 @@ local window_save = new.bool(false)
 --[[ImGui Elements]]--
 local navigation = {
     current = 1,
-    list = { u8'Элементы худа', u8'Позиция элементов худа', u8'Игровые элементы', u8'Пресеты'}
+    list = { u8'Р­Р»РµРјРµРЅС‚С‹ С…СѓРґР°', u8'РџРѕР·РёС†РёСЏ СЌР»РµРјРµРЅС‚РѕРІ С…СѓРґР°', u8'РРіСЂРѕРІС‹Рµ СЌР»РµРјРµРЅС‚С‹', u8'РџСЂРµСЃРµС‚С‹'}
 }
 local selected = {
     [1] = {[0] = 1}
@@ -203,7 +203,7 @@ local selected = {
 
 local hudnav = {
     hudcurrent = 1,
-    hudlist = { u8'ХП', u8'Броня', u8'Кислород', u8'Деньги', u8'Иконка оружия', u8'Патроны', u8'Звезды', u8'Радар'}
+    hudlist = { u8'РҐРџ', u8'Р‘СЂРѕРЅСЏ', u8'РљРёСЃР»РѕСЂРѕРґ', u8'Р”РµРЅСЊРіРё', u8'РРєРѕРЅРєР° РѕСЂСѓР¶РёСЏ', u8'РџР°С‚СЂРѕРЅС‹', u8'Р—РІРµР·РґС‹', u8'Р Р°РґР°СЂ'}
 }
 local hudselected = {
     [1] = {[0] = 1}
@@ -274,7 +274,7 @@ function main()
     if not doesDirectoryExist(getWorkingDirectory()..'\\config') then createDirectory(getWorkingDirectory()..'\\config') end
     if not doesFileExist(getWorkingDirectory()..'\\config\\GameEditor.ini') then inicfg.save(cfg, 'GameEditor.ini') end
     if not doesFileExist(list_file) then
-        jsonSave({{name = "Стандартный пресет",HEALTH = 0xFF1712B5, MONEY = 0xFF286833, ARMOUR = 0xFFE2E2E2, OXYGEN = 0xFFF7DAC0, WANTED = 0xFF2092C5, CHARHP = 0xFF1712B5, CHARARM = 0xFFE2E2E2, RADAR = 0xFF000000, MARKER = 0xFFFF0000, HEADLIGHT = 0xFF404040, LOGOARIZONA = 0xFFFF5050, HUNGERARIZONA = 0xFF608552, CROSSHAIR = 0xFFFFFFFF, MONEYBORDER = 2, TRIANGLECOLOR = 0x00FFFFFF, HEALTHR = 170, HEALTHG = 29, HEALTHB = 36, MONEYR = 52, MONEYG = 101, MONEYB = 36, ARMOURR = 225, ARMOURG = 226, ARMOURB = 226, OXYGENR = 172, OXYGENG = 203, OXYGENB = 238, WANTEDR = 197, WANTEDG = 146, WANTEDB = 32, CHARHPR = 170, CHARHPG = 29, CHARHPB = 36, CHARARMR = 170, CHARARMG = 29, CHARARMB = 36, RADARR = 0, RADARG = 0, RADARB = 0, MARKERR = 255, MARKERG = 0, MARKERB = 0, HEADLIGHTR = 255, HEADLIGHTG = 255, HEADLIGHTB = 255, LOGOARIZONAR = 188, LOGOARIZONAG = 52, LOGOARIZONAB = 54, HUNGERARIZONAR = 96, HUNGERARIZONAG = 133, HUNGERARIZONAB = 82, CROSSHAIRR = 255, CROSSHAIRG = 255, CROSSHAIRB = 255, CHECKBOXBORDER = false, CHECKBOXFIX = false, theme_id = 1, CUSTOMSTYLER = 255, CUSTOMSTYLEG = 255, CUSTOMSTYLEB = 255, TRIANGLECOLORR = 255, TRIANGLECOLORG = 255, TRIANGLECOLORB = 0, HealthX = 141.0, HealthY = 77.0, HealthW = 109.0, HealthH = 9.0, ArmorX = 94.0, ArmorY = 48.0, ArmorW = 62.0, ArmorH = 9.0, BreathX = 94.0, BreathY = 62.0, BreathW = 62.0, BreathH = 9.0, MoneyX = 32.0, MoneyY = 89.0, MoneyW = 0.55, MoneyH = 1.1, WeaponIconX = 32.0, WeaponIconY = 20.0, WeaponAmmoX = 0.17343046, WeaponAmmoY = 20.0, WeaponAmmoW = 0.3, WeaponAmmoH = 0.7, WantedX = 29.0, WantedY = 114.0, WantedW = 0.605, WantedH = 1.21, RadarX = 40.0, RadarY = 104.0, RadarW = 94.0, RadarH = 74.0}})
+        jsonSave({{name = "РЎС‚Р°РЅРґР°СЂС‚РЅС‹Р№ РїСЂРµСЃРµС‚",HEALTH = 0xFF1712B5, MONEY = 0xFF286833, ARMOUR = 0xFFE2E2E2, OXYGEN = 0xFFF7DAC0, WANTED = 0xFF2092C5, CHARHP = 0xFF1712B5, CHARARM = 0xFFE2E2E2, RADAR = 0xFF000000, MARKER = 0xFFFF0000, HEADLIGHT = 0xFF404040, LOGOARIZONA = 0xFFFF5050, HUNGERARIZONA = 0xFF608552, CROSSHAIR = 0xFFFFFFFF, MONEYBORDER = 2, TRIANGLECOLOR = 0x00FFFFFF, HEALTHR = 170, HEALTHG = 29, HEALTHB = 36, MONEYR = 52, MONEYG = 101, MONEYB = 36, ARMOURR = 225, ARMOURG = 226, ARMOURB = 226, OXYGENR = 172, OXYGENG = 203, OXYGENB = 238, WANTEDR = 197, WANTEDG = 146, WANTEDB = 32, CHARHPR = 170, CHARHPG = 29, CHARHPB = 36, CHARARMR = 170, CHARARMG = 29, CHARARMB = 36, RADARR = 0, RADARG = 0, RADARB = 0, MARKERR = 255, MARKERG = 0, MARKERB = 0, HEADLIGHTR = 255, HEADLIGHTG = 255, HEADLIGHTB = 255, LOGOARIZONAR = 188, LOGOARIZONAG = 52, LOGOARIZONAB = 54, HUNGERARIZONAR = 96, HUNGERARIZONAG = 133, HUNGERARIZONAB = 82, CROSSHAIRR = 255, CROSSHAIRG = 255, CROSSHAIRB = 255, CHECKBOXBORDER = false, CHECKBOXFIX = false, theme_id = 1, CUSTOMSTYLER = 255, CUSTOMSTYLEG = 255, CUSTOMSTYLEB = 255, TRIANGLECOLORR = 255, TRIANGLECOLORG = 255, TRIANGLECOLORB = 0, HealthX = 141.0, HealthY = 77.0, HealthW = 109.0, HealthH = 9.0, ArmorX = 94.0, ArmorY = 48.0, ArmorW = 62.0, ArmorH = 9.0, BreathX = 94.0, BreathY = 62.0, BreathW = 62.0, BreathH = 9.0, MoneyX = 32.0, MoneyY = 89.0, MoneyW = 0.55, MoneyH = 1.1, WeaponIconX = 32.0, WeaponIconY = 20.0, WeaponAmmoX = 0.17343046, WeaponAmmoY = 20.0, WeaponAmmoW = 0.3, WeaponAmmoH = 0.7, WantedX = 29.0, WantedY = 114.0, WantedW = 0.605, WantedH = 1.21, RadarX = 40.0, RadarY = 104.0, RadarW = 94.0, RadarH = 74.0}})
     end
     list = jsonRead()
 
@@ -798,9 +798,9 @@ end
 local preset_add_name = imgui.new.char[128]()
 
 local main_frame = imgui.OnFrame(
-    function() return menu.alpha > 0.00 end, -- Указываем здесь данное условие, тем самым рендеря окно только в том случае, если его прозрачность больше нуля
+    function() return menu.alpha > 0.00 end, -- РЈРєР°Р·С‹РІР°РµРј Р·РґРµСЃСЊ РґР°РЅРЅРѕРµ СѓСЃР»РѕРІРёРµ, С‚РµРј СЃР°РјС‹Рј СЂРµРЅРґРµСЂСЏ РѕРєРЅРѕ С‚РѕР»СЊРєРѕ РІ С‚РѕРј СЃР»СѓС‡Р°Рµ, РµСЃР»Рё РµРіРѕ РїСЂРѕР·СЂР°С‡РЅРѕСЃС‚СЊ Р±РѕР»СЊС€Рµ РЅСѓР»СЏ
     function(self)
-        self.HideCursor = not menu.state -- // Курсор будет убираться на моменте, когда окно начинает исчезать
+        self.HideCursor = not menu.state -- // РљСѓСЂСЃРѕСЂ Р±СѓРґРµС‚ СѓР±РёСЂР°С‚СЊСЃСЏ РЅР° РјРѕРјРµРЅС‚Рµ, РєРѕРіРґР° РѕРєРЅРѕ РЅР°С‡РёРЅР°РµС‚ РёСЃС‡РµР·Р°С‚СЊ
         imgui.PushStyleVarFloat(imgui.StyleVar.Alpha, menu.alpha)
         imgui.SetNextWindowPos(imgui.ImVec2(sw / 2, sh / 2), imgui.Cond.FirstUseEver, imgui.ImVec2(0.5, 0.5))
         imgui.SetNextWindowSize(imgui.ImVec2(905, 520), imgui.Cond.FirstUseEver)
@@ -820,8 +820,8 @@ local main_frame = imgui.OnFrame(
         imgui.BeginChild("main", imgui.ImVec2(890, 370), true)
 
             if navigation.current == 1 then
-                imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Цвет денег")).x)/2)
-                imgui.Text(u8"Цвет денег")
+                imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Р¦РІРµС‚ РґРµРЅРµРі")).x)/2)
+                imgui.Text(u8"Р¦РІРµС‚ РґРµРЅРµРі")
                 imgui.PushItemWidth(880)
                 if imgui.ColorEdit3("##1", color) then
                     local clr = join_argb(0, color[0] * 255, color[1] * 255, color[2] * 255)
@@ -835,8 +835,8 @@ local main_frame = imgui.OnFrame(
                     inicfg.save(cfg, "GameEditor.ini")
                 end
                 imgui.Separator()
-                imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Цвет полоски жизни")).x)/2)
-                imgui.Text(u8"Цвет полоски жизни")
+                imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Р¦РІРµС‚ РїРѕР»РѕСЃРєРё Р¶РёР·РЅРё")).x)/2)
+                imgui.Text(u8"Р¦РІРµС‚ РїРѕР»РѕСЃРєРё Р¶РёР·РЅРё")
                 imgui.PushItemWidth(880)
                 if imgui.ColorEdit3("##2", color1) then
                     local clr = join_argb(0, color1[0] * 255, color1[1] * 255, color1[2] * 255)
@@ -850,8 +850,8 @@ local main_frame = imgui.OnFrame(
                     inicfg.save(cfg, "GameEditor.ini")
                 end
                 imgui.Separator()
-                imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Цвет полоски брони")).x)/2)
-                imgui.Text(u8"Цвет полоски брони")
+                imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Р¦РІРµС‚ РїРѕР»РѕСЃРєРё Р±СЂРѕРЅРё")).x)/2)
+                imgui.Text(u8"Р¦РІРµС‚ РїРѕР»РѕСЃРєРё Р±СЂРѕРЅРё")
                 imgui.PushItemWidth(880)
                 if imgui.ColorEdit3("##3", color2) then
                     local clr = join_argb(0, color2[0] * 255, color2[1] * 255, color2[2] * 255)
@@ -866,8 +866,8 @@ local main_frame = imgui.OnFrame(
                     inicfg.save(cfg, "GameEditor.ini")
                 end
                 imgui.Separator()
-                imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Цвет полоски кислорода")).x)/2)
-                imgui.Text(u8"Цвет полоски кислорода")
+                imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Р¦РІРµС‚ РїРѕР»РѕСЃРєРё РєРёСЃР»РѕСЂРѕРґР°")).x)/2)
+                imgui.Text(u8"Р¦РІРµС‚ РїРѕР»РѕСЃРєРё РєРёСЃР»РѕСЂРѕРґР°")
                 imgui.PushItemWidth(880)
                 if imgui.ColorEdit3("##4", color3) then
                     local clr = join_argb(0, color3[0] * 255, color3[1] * 255, color3[2] * 255)
@@ -881,8 +881,8 @@ local main_frame = imgui.OnFrame(
                     inicfg.save(cfg, "GameEditor.ini")
                 end
                 imgui.Separator()
-                imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Цвет уровня розыска")).x)/2)
-                imgui.Text(u8"Цвет уровня розыска")
+                imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Р¦РІРµС‚ СѓСЂРѕРІРЅСЏ СЂРѕР·С‹СЃРєР°")).x)/2)
+                imgui.Text(u8"Р¦РІРµС‚ СѓСЂРѕРІРЅСЏ СЂРѕР·С‹СЃРєР°")
                 imgui.PushItemWidth(880)
                 if imgui.ColorEdit3("##5", color4) then
                     local clr = join_argb(0, color4[0] * 255, color4[1] * 255, color4[2] * 255)
@@ -896,8 +896,8 @@ local main_frame = imgui.OnFrame(
                     inicfg.save(cfg, "GameEditor.ini")
                 end
                 imgui.Separator()
-                imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Цвет обводки радара")).x)/2)
-                imgui.Text(u8"Цвет обводки радара")
+                imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Р¦РІРµС‚ РѕР±РІРѕРґРєРё СЂР°РґР°СЂР°")).x)/2)
+                imgui.Text(u8"Р¦РІРµС‚ РѕР±РІРѕРґРєРё СЂР°РґР°СЂР°")
                 imgui.PushItemWidth(880)
                 if imgui.ColorEdit3("##7", color6) then
                     local clr = join_argb(0, color6[0] * 255, color6[1] * 255, color6[2] * 255)
@@ -912,8 +912,8 @@ local main_frame = imgui.OnFrame(
                 end
                 if name_server:find('Arizona Role Play | (.+)') or name_server:find('Arizona RP | (.+)') then
                     imgui.Separator()
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Цвет лога Arizona RP")).x)/2)
-                    imgui.Text(u8"Цвет лога Arizona RP")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Р¦РІРµС‚ Р»РѕРіР° Arizona RP")).x)/2)
+                    imgui.Text(u8"Р¦РІРµС‚ Р»РѕРіР° Arizona RP")
                     imgui.PushItemWidth(880)
                     if imgui.ColorEdit3("##10", color9) then
                         local clr = join_argb(0, color9[2] * 255, color9[1] * 255, color9[0] * 255)
@@ -928,8 +928,8 @@ local main_frame = imgui.OnFrame(
                         inicfg.save(cfg, "GameEditor.ini")
                     end
                     imgui.Separator()
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Цвет уровня сытости Arizona RP")).x)/2)
-                    imgui.Text(u8"Цвет уровня сытости Arizona RP")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Р¦РІРµС‚ СѓСЂРѕРІРЅСЏ СЃС‹С‚РѕСЃС‚Рё Arizona RP")).x)/2)
+                    imgui.Text(u8"Р¦РІРµС‚ СѓСЂРѕРІРЅСЏ СЃС‹С‚РѕСЃС‚Рё Arizona RP")
                     imgui.PushItemWidth(880)
                     if imgui.ColorEdit3("##12", color11) then
                         local clr = join_argb(0, color11[2] * 255, color11[1] * 255, color11[0] * 255)
@@ -953,240 +953,240 @@ local main_frame = imgui.OnFrame(
                     end
                 end
                 if hudnav.hudcurrent == 1 then
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Ширина")).x)/2)
-                    imgui.Text(u8"Ширина")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("РЁРёСЂРёРЅР°")).x)/2)
+                    imgui.Text(u8"РЁРёСЂРёРЅР°")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##Health1", HealthWSlider, 0.0, 300.0) then 
                         cfg.hudpos.HealthW = HealthWSlider[0] 
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                     imgui.Separator()
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Высота")).x)/2)
-                    imgui.Text(u8"Высота")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Р’С‹СЃРѕС‚Р°")).x)/2)
+                    imgui.Text(u8"Р’С‹СЃРѕС‚Р°")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##Health2", HealthHSlider, 0.0, 300.0) then 
                         cfg.hudpos.HealthH = HealthHSlider[0] 
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                     imgui.Separator()
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Координаты X")).x)/2)
-                    imgui.Text(u8"Координаты X")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("РљРѕРѕСЂРґРёРЅР°С‚С‹ X")).x)/2)
+                    imgui.Text(u8"РљРѕРѕСЂРґРёРЅР°С‚С‹ X")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##Health3", HealthXSlider, 0.0, sw/3) then 
                         cfg.hudpos.HealthX = HealthXSlider[0] 
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                     imgui.Separator()
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Координаты Y")).x)/2)
-                    imgui.Text(u8"Координаты Y")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("РљРѕРѕСЂРґРёРЅР°С‚С‹ Y")).x)/2)
+                    imgui.Text(u8"РљРѕРѕСЂРґРёРЅР°С‚С‹ Y")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##Health4", HealthYSlider, 0.0, sh/2) then 
                         cfg.hudpos.HealthY = HealthYSlider[0]
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                 elseif hudnav.hudcurrent == 2 then
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Ширина")).x)/2)
-                    imgui.Text(u8"Ширина")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("РЁРёСЂРёРЅР°")).x)/2)
+                    imgui.Text(u8"РЁРёСЂРёРЅР°")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##Armor1", ArmorWSlider, 0.0, 300.0) then 
                         cfg.hudpos.ArmorW = ArmorWSlider[0] 
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                     imgui.Separator()
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Высота")).x)/2)
-                    imgui.Text(u8"Высота")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Р’С‹СЃРѕС‚Р°")).x)/2)
+                    imgui.Text(u8"Р’С‹СЃРѕС‚Р°")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##Armor2", ArmorHSlider, 0.0, 300.0) then 
                         cfg.hudpos.ArmorH = ArmorHSlider[0] 
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                     imgui.Separator()
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Координаты X")).x)/2)
-                    imgui.Text(u8"Координаты X")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("РљРѕРѕСЂРґРёРЅР°С‚С‹ X")).x)/2)
+                    imgui.Text(u8"РљРѕРѕСЂРґРёРЅР°С‚С‹ X")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##Armor3", ArmorXSlider, 0.0, sw/3) then 
                         cfg.hudpos.ArmorX = ArmorXSlider[0] 
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                     imgui.Separator()
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Координаты Y")).x)/2)
-                    imgui.Text(u8"Координаты Y")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("РљРѕРѕСЂРґРёРЅР°С‚С‹ Y")).x)/2)
+                    imgui.Text(u8"РљРѕРѕСЂРґРёРЅР°С‚С‹ Y")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##Armor4", ArmorYSlider, 0.0, sh/2) then 
                         cfg.hudpos.ArmorY = ArmorYSlider[0]
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                 elseif hudnav.hudcurrent == 3 then
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Ширина")).x)/2)
-                    imgui.Text(u8"Ширина")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("РЁРёСЂРёРЅР°")).x)/2)
+                    imgui.Text(u8"РЁРёСЂРёРЅР°")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##Breath1", BreathWSlider, 0.0, 300.0) then 
                         cfg.hudpos.BreathW = BreathWSlider[0] 
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                     imgui.Separator()
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Высота")).x)/2)
-                    imgui.Text(u8"Высота")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Р’С‹СЃРѕС‚Р°")).x)/2)
+                    imgui.Text(u8"Р’С‹СЃРѕС‚Р°")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##Breath2", BreathHSlider, 0.0, 300.0) then 
                         cfg.hudpos.BreathH = BreathHSlider[0] 
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                     imgui.Separator()
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Координаты X")).x)/2)
-                    imgui.Text(u8"Координаты X")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("РљРѕРѕСЂРґРёРЅР°С‚С‹ X")).x)/2)
+                    imgui.Text(u8"РљРѕРѕСЂРґРёРЅР°С‚С‹ X")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##Breath3", BreathXSlider, 0.0, sw/3) then 
                         cfg.hudpos.BreathX = BreathXSlider[0] 
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                     imgui.Separator()
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Координаты Y")).x)/2)
-                    imgui.Text(u8"Координаты Y")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("РљРѕРѕСЂРґРёРЅР°С‚С‹ Y")).x)/2)
+                    imgui.Text(u8"РљРѕРѕСЂРґРёРЅР°С‚С‹ Y")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##Breath4", BreathYSlider, 0.0, sh/2) then 
                         cfg.hudpos.BreathY = BreathYSlider[0]
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                 elseif hudnav.hudcurrent == 4 then
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Ширина")).x)/2)
-                    imgui.Text(u8"Ширина")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("РЁРёСЂРёРЅР°")).x)/2)
+                    imgui.Text(u8"РЁРёСЂРёРЅР°")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##Money1", MoneyWSlider, 0.0, 300.0) then 
                         cfg.hudpos.MoneyW = MoneyWSlider[0] 
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                     imgui.Separator()
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Высота")).x)/2)
-                    imgui.Text(u8"Высота")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Р’С‹СЃРѕС‚Р°")).x)/2)
+                    imgui.Text(u8"Р’С‹СЃРѕС‚Р°")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##Money2", MoneyHSlider, 0.0, 300.0) then 
                         cfg.hudpos.MoneyH = MoneyHSlider[0] 
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                     imgui.Separator()
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Координаты X")).x)/2)
-                    imgui.Text(u8"Координаты X")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("РљРѕРѕСЂРґРёРЅР°С‚С‹ X")).x)/2)
+                    imgui.Text(u8"РљРѕРѕСЂРґРёРЅР°С‚С‹ X")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##Money3", MoneyXSlider, 0.0, sw/3) then 
                         cfg.hudpos.MoneyX = MoneyXSlider[0] 
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                     imgui.Separator()
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Координаты Y")).x)/2)
-                    imgui.Text(u8"Координаты Y")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("РљРѕРѕСЂРґРёРЅР°С‚С‹ Y")).x)/2)
+                    imgui.Text(u8"РљРѕРѕСЂРґРёРЅР°С‚С‹ Y")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##Money4", MoneyYSlider, 0.0, sh/2) then 
                         cfg.hudpos.MoneyY = MoneyYSlider[0]
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                 elseif hudnav.hudcurrent == 5 then
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Координаты X")).x)/2)
-                    imgui.Text(u8"Координаты X")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("РљРѕРѕСЂРґРёРЅР°С‚С‹ X")).x)/2)
+                    imgui.Text(u8"РљРѕРѕСЂРґРёРЅР°С‚С‹ X")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##WeaponIcon3", WeaponIconXSlider, -30.0, sw/3) then 
                         cfg.hudpos.WeaponIconX = WeaponIconXSlider[0] 
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                     imgui.Separator()
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Координаты Y")).x)/2)
-                    imgui.Text(u8"Координаты Y")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("РљРѕРѕСЂРґРёРЅР°С‚С‹ Y")).x)/2)
+                    imgui.Text(u8"РљРѕРѕСЂРґРёРЅР°С‚С‹ Y")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##WeaponIcon4", WeaponIconYSlider, 0.0, sh/2) then 
                         cfg.hudpos.WeaponIconY = WeaponIconYSlider[0]
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                 elseif hudnav.hudcurrent == 6 then
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Ширина")).x)/2)
-                    imgui.Text(u8"Ширина")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("РЁРёСЂРёРЅР°")).x)/2)
+                    imgui.Text(u8"РЁРёСЂРёРЅР°")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##WeaponAmmo1", WeaponAmmoWSlider, 0.0, 300.0) then 
                         cfg.hudpos.WeaponAmmoW = WeaponAmmoWSlider[0] 
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                     imgui.Separator()
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Высота")).x)/2)
-                    imgui.Text(u8"Высота")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Р’С‹СЃРѕС‚Р°")).x)/2)
+                    imgui.Text(u8"Р’С‹СЃРѕС‚Р°")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##WeaponAmmo2", WeaponAmmoHSlider, 0.0, 300.0) then 
                         cfg.hudpos.WeaponAmmoH = WeaponAmmoHSlider[0] 
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                     imgui.Separator()
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Координаты X")).x)/2)
-                    imgui.Text(u8"Координаты X")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("РљРѕРѕСЂРґРёРЅР°С‚С‹ X")).x)/2)
+                    imgui.Text(u8"РљРѕРѕСЂРґРёРЅР°С‚С‹ X")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##WeaponAmmo3", WeaponAmmoXSlider, 0, 1) then 
                         cfg.hudpos.WeaponAmmoX = WeaponAmmoXSlider[0] 
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                     imgui.Separator()
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Координаты Y")).x)/2)
-                    imgui.Text(u8"Координаты Y")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("РљРѕРѕСЂРґРёРЅР°С‚С‹ Y")).x)/2)
+                    imgui.Text(u8"РљРѕРѕСЂРґРёРЅР°С‚С‹ Y")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##WeaponAmmo4", WeaponAmmoYSlider, 0, sh/2) then 
                         cfg.hudpos.WeaponAmmoY = WeaponAmmoYSlider[0]
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                 elseif hudnav.hudcurrent == 7 then
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Ширина")).x)/2)
-                    imgui.Text(u8"Ширина")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("РЁРёСЂРёРЅР°")).x)/2)
+                    imgui.Text(u8"РЁРёСЂРёРЅР°")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##Wanted1", WantedWSlider, 0.0, 300.0) then 
                         cfg.hudpos.WantedW = WantedWSlider[0] 
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                     imgui.Separator()
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Высота")).x)/2)
-                    imgui.Text(u8"Высота")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Р’С‹СЃРѕС‚Р°")).x)/2)
+                    imgui.Text(u8"Р’С‹СЃРѕС‚Р°")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##Wanted2", WantedHSlider, 0.0, 300.0) then 
                         cfg.hudpos.WantedH = WantedHSlider[0] 
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                     imgui.Separator()
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Координаты X")).x)/2)
-                    imgui.Text(u8"Координаты X")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("РљРѕРѕСЂРґРёРЅР°С‚С‹ X")).x)/2)
+                    imgui.Text(u8"РљРѕРѕСЂРґРёРЅР°С‚С‹ X")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##Wanted3", WantedXSlider, 0.0, sw/3) then 
                         cfg.hudpos.WantedX = WantedXSlider[0] 
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                     imgui.Separator()
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Координаты Y")).x)/2)
-                    imgui.Text(u8"Координаты Y")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("РљРѕРѕСЂРґРёРЅР°С‚С‹ Y")).x)/2)
+                    imgui.Text(u8"РљРѕРѕСЂРґРёРЅР°С‚С‹ Y")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##Wanted4", WantedYSlider, 0.0, sh/2) then 
                         cfg.hudpos.WantedY = WantedYSlider[0]
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                 elseif hudnav.hudcurrent == 8 then
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Ширина")).x)/2)
-                    imgui.Text(u8"Ширина")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("РЁРёСЂРёРЅР°")).x)/2)
+                    imgui.Text(u8"РЁРёСЂРёРЅР°")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##Radar1", RadarWSlider, 0.0, 300.0) then 
                         cfg.hudpos.RadarW = RadarWSlider[0] 
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                     imgui.Separator()
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Высота")).x)/2)
-                    imgui.Text(u8"Высота")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Р’С‹СЃРѕС‚Р°")).x)/2)
+                    imgui.Text(u8"Р’С‹СЃРѕС‚Р°")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##Radar2", RadarHSlider, 0.0, 300.0) then 
                         cfg.hudpos.RadarH = RadarHSlider[0] 
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                     imgui.Separator()
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Координаты X")).x)/2)
-                    imgui.Text(u8"Координаты X")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("РљРѕРѕСЂРґРёРЅР°С‚С‹ X")).x)/2)
+                    imgui.Text(u8"РљРѕРѕСЂРґРёРЅР°С‚С‹ X")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##Radar3", RadarXSlider, 0.0, sw/3) then 
                         cfg.hudpos.RadarX = RadarXSlider[0] 
                         inicfg.save(cfg, 'GameEditor.ini') 
                     end
                     imgui.Separator()
-                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Координаты Y")).x)/2)
-                    imgui.Text(u8"Координаты Y")
+                    imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("РљРѕРѕСЂРґРёРЅР°С‚С‹ Y")).x)/2)
+                    imgui.Text(u8"РљРѕРѕСЂРґРёРЅР°С‚С‹ Y")
                     imgui.PushItemWidth(880)
                     if imgui.SliderFloat("##Radar4", RadarYSlider, 0.0, sh/2) then 
                         cfg.hudpos.RadarY = RadarYSlider[0]
@@ -1194,8 +1194,8 @@ local main_frame = imgui.OnFrame(
                     end
                 end
             elseif navigation.current == 3 then
-                imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Цвет маркеров")).x)/2)
-                imgui.Text(u8"Цвет маркеров")
+                imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Р¦РІРµС‚ РјР°СЂРєРµСЂРѕРІ")).x)/2)
+                imgui.Text(u8"Р¦РІРµС‚ РјР°СЂРєРµСЂРѕРІ")
                 imgui.PushItemWidth(880)
                 if imgui.ColorEdit3("##8", color7) then
                     local clr = join_argb(0, color7[0] * 255, color7[1] * 255, color7[2] * 255)
@@ -1209,8 +1209,8 @@ local main_frame = imgui.OnFrame(
                     inicfg.save(cfg, "GameEditor.ini")
                 end
                 imgui.Separator()
-                imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Цвет света фар")).x)/2)
-                imgui.Text(u8"Цвет света фар")
+                imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Р¦РІРµС‚ СЃРІРµС‚Р° С„Р°СЂ")).x)/2)
+                imgui.Text(u8"Р¦РІРµС‚ СЃРІРµС‚Р° С„Р°СЂ")
                 imgui.PushItemWidth(880)
                 if imgui.ColorEdit3("##9", color8) then
                     local clr = join_argb(0, color8[0] * 255, color8[1] * 255, color8[2] * 255)
@@ -1224,8 +1224,8 @@ local main_frame = imgui.OnFrame(
                     inicfg.save(cfg, "GameEditor.ini")
                 end
                 imgui.Separator()
-                imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Цвет прицела")).x)/2)
-                imgui.Text(u8"Цвет прицела")
+                imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Р¦РІРµС‚ РїСЂРёС†РµР»Р°")).x)/2)
+                imgui.Text(u8"Р¦РІРµС‚ РїСЂРёС†РµР»Р°")
                 imgui.PushItemWidth(880)
                 if imgui.ColorEdit3("##13", color10) then
                     local clr = join_argb(0, color10[0] * 255, color10[1] * 255, color10[2] * 255)
@@ -1239,8 +1239,8 @@ local main_frame = imgui.OnFrame(
                     inicfg.save(cfg, "GameEditor.ini")
                 end
                 imgui.Separator()
-                imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Цвет жизни других игроков")).x)/2)
-                imgui.Text(u8"Цвет жизни других игроков")
+                imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Р¦РІРµС‚ Р¶РёР·РЅРё РґСЂСѓРіРёС… РёРіСЂРѕРєРѕРІ")).x)/2)
+                imgui.Text(u8"Р¦РІРµС‚ Р¶РёР·РЅРё РґСЂСѓРіРёС… РёРіСЂРѕРєРѕРІ")
                 imgui.PushItemWidth(880)
                 if imgui.ColorEdit3("##123", color5) then
                     local clr = join_argb(0, color5[2] * 255, color5[1] * 255, color5[0] * 255)
@@ -1254,8 +1254,8 @@ local main_frame = imgui.OnFrame(
                     inicfg.save(cfg, "GameEditor.ini")
                 end
                 imgui.Separator()
-                imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Цвет брони других игроков")).x)/2)
-                imgui.Text(u8"Цвет брони других игроков")
+                imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Р¦РІРµС‚ Р±СЂРѕРЅРё РґСЂСѓРіРёС… РёРіСЂРѕРєРѕРІ")).x)/2)
+                imgui.Text(u8"Р¦РІРµС‚ Р±СЂРѕРЅРё РґСЂСѓРіРёС… РёРіСЂРѕРєРѕРІ")
                 imgui.PushItemWidth(880)
                 if imgui.ColorEdit3("##1235", color14) then
                     local clr = join_argb(0, color14[2] * 255, color14[1] * 255, color14[0] * 255)
@@ -1269,8 +1269,8 @@ local main_frame = imgui.OnFrame(
                     inicfg.save(cfg, "GameEditor.ini")
                 end
                 imgui.Separator()
-                imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Цвет триугольника над головой")).x)/2)
-                imgui.Text(u8"Цвет триугольника над головой")
+                imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Р¦РІРµС‚ С‚СЂРёСѓРіРѕР»СЊРЅРёРєР° РЅР°Рґ РіРѕР»РѕРІРѕР№")).x)/2)
+                imgui.Text(u8"Р¦РІРµС‚ С‚СЂРёСѓРіРѕР»СЊРЅРёРєР° РЅР°Рґ РіРѕР»РѕРІРѕР№")
                 imgui.PushItemWidth(880)
                 if imgui.ColorEdit3("##70", color13) then
                     local clr = join_argb(0, color13[2] * 255, color13[1] * 255, color13[0] * 255)
@@ -1284,7 +1284,7 @@ local main_frame = imgui.OnFrame(
                     inicfg.save(cfg, "GameEditor.ini")
                 end
                 imgui.Separator()
-                imgui.Checkbox(u8"Сделать обводку денег тоньше", moneyborder_check)
+                imgui.Checkbox(u8"РЎРґРµР»Р°С‚СЊ РѕР±РІРѕРґРєСѓ РґРµРЅРµРі С‚РѕРЅСЊС€Рµ", moneyborder_check)
                 if moneyborder_check[0] == true then
                     memory.setint8(0x58F58D, 1, true)
                     cfg.config.MONEYBORDER = 1
@@ -1297,7 +1297,7 @@ local main_frame = imgui.OnFrame(
                     inicfg.save(cfg, "GameEditor.ini")
                 end
                 imgui.SameLine(660)
-                imgui.Checkbox(u8"Фикс белой точки на прицеле", checkfix)
+                imgui.Checkbox(u8"Р¤РёРєСЃ Р±РµР»РѕР№ С‚РѕС‡РєРё РЅР° РїСЂРёС†РµР»Рµ", checkfix)
                 if checkfix[0] then
                     memory.fill(0x058E280, 0xEB, 1, true)
                     cfg.colorimgui.CHECKBOXFIX = checkfix[0]
@@ -1309,11 +1309,11 @@ local main_frame = imgui.OnFrame(
                 end
             elseif navigation.current == 4 then
                 imgui.SetCursorPosX(5)
-                if imgui.Button(u8'Сохранить пресет', imgui.ImVec2(880, 20)) then
+                if imgui.Button(u8'РЎРѕС…СЂР°РЅРёС‚СЊ РїСЂРµСЃРµС‚', imgui.ImVec2(880, 20)) then
                     window_save[0] = true
                 end
                 imgui.SetCursorPosX(5)
-                if imgui.Button(u8'Удалить пресет', imgui.ImVec2(880, 20)) then
+                if imgui.Button(u8'РЈРґР°Р»РёС‚СЊ РїСЂРµСЃРµС‚', imgui.ImVec2(880, 20)) then
                     table.remove(list, preset_selected)
                     jsonSave(list)
                 end
@@ -1447,28 +1447,28 @@ local secondFrame = imgui.OnFrame(
         imgui.SetNextWindowPos(imgui.ImVec2(sw / 2, sh / 2), imgui.Cond.FirstUseEver, imgui.ImVec2(0.5, 0.5))
         imgui.SetNextWindowSize(imgui.ImVec2(210, 150))
         imgui.Begin("##Preset_Saved", window_save, imgui.WindowFlags.NoResize + imgui.WindowFlags.NoTitleBar)
-            imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("Название пресета")).x)/2)
-            imgui.Text(u8'Название пресета')
+            imgui.SetCursorPosX((imgui.GetWindowWidth() - imgui.CalcTextSize(u8("РќР°Р·РІР°РЅРёРµ РїСЂРµСЃРµС‚Р°")).x)/2)
+            imgui.Text(u8'РќР°Р·РІР°РЅРёРµ РїСЂРµСЃРµС‚Р°')
             imgui.PushItemWidth(190)
             imgui.InputText('##presetname', preset_add_name, 128)
             imgui.PopItemWidth()
 
-            if imgui.Button(u8'Сохранить пресет', imgui.ImVec2(190, 20)) then
+            if imgui.Button(u8'РЎРѕС…СЂР°РЅРёС‚СЊ РїСЂРµСЃРµС‚', imgui.ImVec2(190, 20)) then
                 table.insert(list, {name = u8:decode(ffi.string(preset_add_name)), HEALTH = cfg.config.HEALTH, MONEY = cfg.config.MONEY, ARMOUR = cfg.config.ARMOUR, OXYGEN = cfg.config.OXYGEN, WANTED = cfg.config.WANTED, CHARHP = cfg.config.CHARHP, CHARARM = cfg.config.CHARARM, RADAR = cfg.config.RADAR, MARKER = cfg.config.MARKER, HEADLIGHT = cfg.config.HEADLIGHT, LOGOARIZONA = cfg.config.LOGOARIZONA, HUNGERARIZONA = cfg.config.HUNGERARIZONA, CROSSHAIR = cfg.config.CROSSHAIR, MONEYBORDER = cfg.config.MONEYBORDER, TRIANGLECOLOR = cfg.config.TRIANGLECOLOR, HEALTHR = cfg.colorimgui.HEALTHR, HEALTHG = cfg.colorimgui.HEALTHG, HEALTHB = cfg.colorimgui.HEALTHB, MONEYR = cfg.colorimgui.MONEYR, MONEYG = cfg.colorimgui.MONEYG, MONEYB = cfg.colorimgui.MONEYB, ARMOURR = cfg.colorimgui.ARMOURR, ARMOURG = cfg.colorimgui.ARMOURG, ARMOURB = cfg.colorimgui.ARMOURB, OXYGENR = cfg.colorimgui.OXYGENR, OXYGENG = cfg.colorimgui.OXYGENG, OXYGENB = cfg.colorimgui.OXYGENB, WANTEDR = cfg.colorimgui.WANTEDR, WANTEDG = cfg.colorimgui.WANTEDG, WANTEDB = cfg.colorimgui.WANTEDB, CHARHPR = cfg.colorimgui.CHARHPR, CHARHPG = cfg.colorimgui.CHARHPG, CHARHPB = cfg.colorimgui.CHARHPB, CHARARMR = cfg.colorimgui.CHARARMR, CHARARMG = cfg.colorimgui.CHARARMG, CHARARMB = cfg.colorimgui.CHARARMB, RADARR = cfg.colorimgui.RADARR, RADARG = cfg.colorimgui.RADARG, RADARB = cfg.colorimgui.RADARB, MARKERR = cfg.colorimgui.MARKERR, MARKERG = cfg.colorimgui.MARKERG, MARKERB = cfg.colorimgui.MARKERB, HEADLIGHTR = cfg.colorimgui.HEADLIGHTR, HEADLIGHTG = cfg.colorimgui.HEADLIGHTG, HEADLIGHTB = cfg.colorimgui.HEADLIGHTB, LOGOARIZONAR = cfg.colorimgui.LOGOARIZONAR, LOGOARIZONAG = cfg.colorimgui.LOGOARIZONAG, LOGOARIZONAB = cfg.colorimgui.LOGOARIZONAB, HUNGERARIZONAR = cfg.colorimgui.HUNGERARIZONAR, HUNGERARIZONAG = cfg.colorimgui.HUNGERARIZONAG, HUNGERARIZONAB = cfg.colorimgui.HUNGERARIZONAB, CROSSHAIRR = cfg.colorimgui.CROSSHAIRR, CROSSHAIRG = cfg.colorimgui.CROSSHAIRG, CROSSHAIRB = cfg.colorimgui.CROSSHAIRB, CHECKBOXBORDER = cfg.colorimgui.CHECKBOXBORDER, CHECKBOXFIX =cfg.colorimgui.CHECKBOXFIX, TRIANGLECOLORR = cfg.colorimgui.TRIANGLECOLORR, TRIANGLECOLORG = cfg.colorimgui.TRIANGLECOLORG, TRIANGLECOLORB = cfg.colorimgui.TRIANGLECOLORB, HealthX = cfg.hudpos.HealthX, HealthY = cfg.hudpos.HealthY, HealthW = cfg.hudpos.HealthW, HealthH = cfg.hudpos.HealthH, ArmorX = cfg.hudpos.ArmorX, ArmorY = cfg.hudpos.ArmorY, ArmorW = cfg.hudpos.ArmorW, ArmorH = cfg.hudpos.ArmorH, BreathX = cfg.hudpos.BreathX, BreathY = cfg.hudpos.BreathY, BreathW = cfg.hudpos.BreathW, BreathH = cfg.hudpos.BreathH, MoneyX = cfg.hudpos.MoneyX, MoneyY = cfg.hudpos.MoneyY, MoneyW = cfg.hudpos.MoneyW, MoneyH = cfg.hudpos.MoneyH, WeaponIconX = cfg.hudpos.WeaponIconX, WeaponIconY = cfg.hudpos.WeaponIconY, WeaponAmmoX = cfg.hudpos.WeaponAmmoX, WeaponAmmoY = cfg.hudpos.WeaponAmmoY, WeaponAmmoW = cfg.hudpos.WeaponAmmoW, WeaponAmmoH = cfg.hudpos.WeaponAmmoH, WantedX = cfg.hudpos.WantedX, WantedY = cfg.hudpos.WantedY, WantedW = cfg.hudpos.WantedW, WantedH = cfg.hudpos.WantedH, RadarX = cfg.hudpos.RadarX, RadarY = cfg.hudpos.RadarY, RadarW = cfg.hudpos.RadarW, RadarH = cfg.hudpos.RadarH,})
-                preset_add_name = imgui.new.char[128](u8'Пресет #'..tostring(#list + 1))
+                preset_add_name = imgui.new.char[128](u8'РџСЂРµСЃРµС‚ #'..tostring(#list + 1))
                 jsonSave(list)
                 imgui.CloseCurrentPopup()
                 window_save[0] = not window_save[0]
             end
-            if imgui.Button(u8'Стандартный пресет', imgui.ImVec2(190, 20)) then
+            if imgui.Button(u8'РЎС‚Р°РЅРґР°СЂС‚РЅС‹Р№ РїСЂРµСЃРµС‚', imgui.ImVec2(190, 20)) then
                 table.insert(list, {name = u8:decode(ffi.string(preset_add_name)), HEALTH = 0xFF1712B5, MONEY = 0xFF286833, ARMOUR = 0xFFE2E2E2, OXYGEN = 0xFFF7DAC0, WANTED = 0xFF2092C5, CHARHP = 0xFF1712B5, CHARARM = 0xFFE2E2E2, RADAR = 0xFF000000, MARKER = 0xFFFF0000, HEADLIGHT = 0xFF404040, LOGOARIZONA = 0xFFFF5050, HUNGERARIZONA = 0xFF608552, CROSSHAIR = 0xFFFFFFFF, MONEYBORDER = 2, TRIANGLECOLOR = 0x00FFFFFF, HEALTHR = 170, HEALTHG = 29, HEALTHB = 36, MONEYR = 52, MONEYG = 101, MONEYB = 36, ARMOURR = 225, ARMOURG = 226, ARMOURB = 226, OXYGENR = 172, OXYGENG = 203, OXYGENB = 238, WANTEDR = 197, WANTEDG = 146, WANTEDB = 32, CHARHPR = 170, CHARHPG = 29, CHARHPB = 36, CHARARMR = 170, CHARARMG = 29, CHARARMB = 36, RADARR = 0, RADARG = 0, RADARB = 0, MARKERR = 255, MARKERG = 0, MARKERB = 0, HEADLIGHTR = 255, HEADLIGHTG = 255, HEADLIGHTB = 255, LOGOARIZONAR = 188, LOGOARIZONAG = 52, LOGOARIZONAB = 54, HUNGERARIZONAR = 96, HUNGERARIZONAG = 133, HUNGERARIZONAB = 82, CROSSHAIRR = 255, CROSSHAIRG = 255, CROSSHAIRB = 255, CHECKBOXBORDER = false, CHECKBOXFIX = false, TRIANGLECOLORR = 255, TRIANGLECOLORG = 255, TRIANGLECOLORB = 0, HealthX = 141.0, HealthY = 77.0, HealthW = 109.0, HealthH = 9.0, ArmorX = 94.0, ArmorY = 48.0, ArmorW = 62.0, ArmorH = 9.0, BreathX = 94.0, BreathY = 62.0, BreathW = 62.0, BreathH = 9.0, MoneyX = 32.0, MoneyY = 89.0, MoneyW = 0.55, MoneyH = 1.1, WeaponIconX = 32.0, WeaponIconY = 20.0, WeaponAmmoX = 0.17343046, WeaponAmmoY = 20.0, WeaponAmmoW = 0.3, WeaponAmmoH = 0.7, WantedX = 29.0, WantedY = 20.0, WantedW = 0.605, WantedH = 1.21, RadarX = 40.0, RadarY = 104.0, RadarW = 94.0, RadarH = 74.0,})
-                preset_add_name = imgui.new.char[128](u8'Пресет #'..tostring(#list + 1))
+                preset_add_name = imgui.new.char[128](u8'РџСЂРµСЃРµС‚ #'..tostring(#list + 1))
                 jsonSave(list)
                 imgui.CloseCurrentPopup()
                 window_save[0] = not window_save[0]
             end
-            if imgui.Button(u8'Закрыть', imgui.ImVec2(190, 20)) then
-                preset_add_name = imgui.new.char[128](u8'Пресет #'..tostring(#list + 1))
+            if imgui.Button(u8'Р—Р°РєСЂС‹С‚СЊ', imgui.ImVec2(190, 20)) then
+                preset_add_name = imgui.new.char[128](u8'РџСЂРµСЃРµС‚ #'..tostring(#list + 1))
                 jsonSave(list)
                 window_save[0] = not window_save[0]
             end
