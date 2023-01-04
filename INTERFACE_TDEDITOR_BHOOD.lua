@@ -1,4 +1,4 @@
-
+	
 local se = require 'lib.samp.events'
 
 function main()
@@ -15,12 +15,12 @@ function se.onShowTextDraw(id, data)
 		data.position.y = data.position.y - 9
 	end
 	
-	if id == 3121 then -- payday text
+	if id == 2129 then -- payday text
 		data.position.x = data.position.x - 1
 		data.position.y = data.position.y - 9
 	end
 
-	if id == 2125 then -- speedometru text
+	if id == 2122 then -- speedometru text
 		data.position.x = data.position.x + 60
 		data.position.y = data.position.y - 10
 		data.letterHeight = data.letterHeight / 0.95
