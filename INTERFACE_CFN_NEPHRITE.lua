@@ -201,7 +201,6 @@ end
 
 function onScriptTerminate(s, q)
     if s == thisScript() then
-        displayHud(true)
         save()
     end
 end
@@ -628,7 +627,6 @@ end
 
 function main()
     while not isSampAvailable() do wait(0) end
-    displayHud(false)
     sampRegisterChatCommand('cfn', function()
         settingsWindow[0] = not settingsWindow[0]
     end)
