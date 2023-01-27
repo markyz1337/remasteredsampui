@@ -504,13 +504,13 @@ local newFrame = imgui.OnFrame(
        
         local money = separator(tostring(online)..' / 1000', fa.ICON_FA_CIRCLE) -- dean
         imgui.PushFont(FONT[18].b)
-        imgui.SetCursorPos(imgui.ImVec2(imgui.GetWindowSize().x - imgui.CalcTextSize(money).x - 257, 36 + size.y + 10 + iconPosY))
+        imgui.SetCursorPos(imgui.ImVec2(imgui.GetWindowSize().x - imgui.CalcTextSize(money).x - 312, 36 + size.y + 10 + iconPosY))
         imgui.TextWithShadow(money, float4ToVec4(cols.money), 4, imgui.ImVec4(0, 0, 0, 0.3), false)
         imgui.PopFont()
 		
 		local money = separator(tostring(nickname)) -- dean
         imgui.PushFont(FONT[18].b)
-        imgui.SetCursorPos(imgui.ImVec2(imgui.GetWindowSize().x - imgui.CalcTextSize(money).x - 257, 59 + size.y + 10 + iconPosY))
+        imgui.SetCursorPos(imgui.ImVec2(imgui.GetWindowSize().x - imgui.CalcTextSize(money).x - 312, 59 + size.y + 10 + iconPosY))
         imgui.TextWithShadow(money, float4ToVec4(cols.money), 4, imgui.ImVec4(0, 0, 0, 0.3), false)
         imgui.PopFont()
 
