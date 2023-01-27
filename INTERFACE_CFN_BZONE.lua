@@ -636,7 +636,7 @@ function main()
         wait(0)
         barsWindow[0] = renderWindow[0]
         renderWindow[0] = s.enabled[0]
-        displayHud(not s.enabled[0])
+        displayHud(s.enabled[0])
         result, id_p = sampGetPlayerIdByCharHandle(PLAYER_PED)
 		nickname = sampGetPlayerNickname(id_p)
 		online = sampGetPlayerCount(false)
