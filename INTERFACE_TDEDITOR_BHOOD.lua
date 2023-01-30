@@ -14,6 +14,11 @@ function se.onShowTextDraw(id, data)
 		data.position.x = data.position.x - 10
 		data.position.y = data.position.y - 9
 	end
+
+	if id == 2128 then -- name text
+		data.position.x = data.position.x - 9
+		data.position.y = data.position.y - 9
+	end
 	
 	if id == 2129 then -- payday text
 		data.position.x = data.position.x - 1
