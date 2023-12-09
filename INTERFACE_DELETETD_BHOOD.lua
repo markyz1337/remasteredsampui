@@ -1,5 +1,5 @@
 local sampev = require 'lib.samp.events'
-local tds = {240,241,2114,2118} --айди текстдравов
+local tds = {239,240,241,2114,2118} --айди текстдравов
 
 function sampev.onShowTextDraw(id, data)
     for i = 1, #tds do
