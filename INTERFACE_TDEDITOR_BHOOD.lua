@@ -10,22 +10,22 @@ end
 
 
 function se.onShowTextDraw(id, data)
-	if id == 204 then -- server name
+	if id == 239 then -- server name
 		data.position.x = data.position.x - 10
 		data.position.y = data.position.y - 9
 	end
 
-	if id == 2128 then -- name text
+	if id == 2123 then -- name text
 		data.position.x = data.position.x - 9
 		data.position.y = data.position.y - 9
 	end
 	
-	if id == 2129 then -- payday text
+	if id == 2124 then -- payday text
 		data.position.x = data.position.x - 1
 		data.position.y = data.position.y - 9
 	end
 
-	if id == 2122 then -- speedometru text
+	if id == 2117 then -- speedometru text
 		data.position.x = data.position.x + 60
 		data.position.y = data.position.y - 10
 		data.letterHeight = data.letterHeight / 0.95
